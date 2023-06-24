@@ -9,9 +9,9 @@ Xero Clan Helper is a simple Discord Bot to spice up your Xero Clan Server
 - Python 3 (https://www.python.org/)
 
 - Packages:
- - requests
- - BeautifulSoup4
- - discord
+  - requests
+  - BeautifulSoup4
+  - discord
 
 ## Setup
 1. Download project files

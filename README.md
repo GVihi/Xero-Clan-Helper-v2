@@ -23,9 +23,9 @@ Xero Clan Helper is a simple Discord Bot to spice up your Xero Clan Server
 Bot has to run 24/7, but can be stopped via **Keyboard Interrupt** (CTRL + C).
 
 ## Bot is still in development and a lot is subject to change.
-Any potential idead or feedback is greatly appreciated
+Any potential ideas or feedback is greatly appreciated
 
-### Example command responses that are currently supported:
+#### Example command responses that are currently supported:
 
 ![clan_command](https://github.com/GVihi/Xero-Clan-Helper-v2/blob/main/images/clan%20command.png)
 

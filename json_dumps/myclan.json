@@ -1,0 +1,837 @@
+{
+    "success": true,
+    "players": [
+        {
+            "name": "PapiJuancho",
+            "progression": {
+                "xp": 4225282,
+                "level": {
+                    "value": 53,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/53.png",
+                    "progress": {
+                        "current": 170032,
+                        "required": 292050,
+                        "percentage": 58
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": true,
+                "server": {
+                    "name": "Xero"
+                },
+                "channel": {
+                    "name": "Unlimited"
+                },
+                "room": {
+                    "id": 8
+                }
+            }
+        },
+        {
+            "name": "[GAY]Shavit.",
+            "progression": {
+                "xp": 8246152,
+                "level": {
+                    "value": 64,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/64.png",
+                    "progress": {
+                        "current": 188552,
+                        "required": 450010,
+                        "percentage": 41
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": true,
+                "server": {
+                    "name": "Xero"
+                },
+                "channel": {
+                    "name": "Unlimited"
+                },
+                "room": {
+                    "id": 8
+                }
+            }
+        },
+        {
+            "name": "Rain",
+            "progression": {
+                "xp": 5645263,
+                "level": {
+                    "value": 57,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/57.png",
+                    "progress": {
+                        "current": 335653,
+                        "required": 349490,
+                        "percentage": 96
+                    }
+                }
+            },
+            "web": {
+                "online": true
+            },
+            "game": {
+                "online": true,
+                "server": {
+                    "name": "Xero"
+                },
+                "channel": {
+                    "name": "Channel Selection"
+                },
+                "room": null
+            }
+        },
+        {
+            "name": "Truthseeker",
+            "progression": {
+                "xp": 3739517,
+                "level": {
+                    "value": 51,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/51.png",
+                    "progress": {
+                        "current": 229217,
+                        "required": 265950,
+                        "percentage": 86
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": true,
+                "server": {
+                    "name": "Xero"
+                },
+                "channel": {
+                    "name": "Unlimited"
+                },
+                "room": {
+                    "id": 8
+                }
+            }
+        },
+        {
+            "name": "Boyoz",
+            "progression": {
+                "xp": 3017884,
+                "level": {
+                    "value": 49,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/49.png",
+                    "progress": {
+                        "current": 334,
+                        "required": 239850,
+                        "percentage": 0
+                    }
+                }
+            },
+            "web": {
+                "online": true
+            },
+            "game": {
+                "online": true,
+                "server": {
+                    "name": "Xero"
+                },
+                "channel": {
+                    "name": "Unlimited"
+                },
+                "room": {
+                    "id": 8
+                }
+            }
+        },
+        {
+            "name": "Vladislav",
+            "progression": {
+                "xp": 2948909,
+                "level": {
+                    "value": 48,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/48.png",
+                    "progress": {
+                        "current": 158159,
+                        "required": 226800,
+                        "percentage": 69
+                    }
+                }
+            },
+            "web": {
+                "online": true
+            },
+            "game": {
+                "online": true,
+                "server": {
+                    "name": "Xero"
+                },
+                "channel": {
+                    "name": "Unlimited"
+                },
+                "room": {
+                    "id": 8
+                }
+            }
+        },
+        {
+            "name": "Aerkl",
+            "progression": {
+                "xp": 2387833,
+                "level": {
+                    "value": 46,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/46.png",
+                    "progress": {
+                        "current": 15103,
+                        "required": 203080,
+                        "percentage": 7
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": true,
+                "server": {
+                    "name": "Xero"
+                },
+                "channel": {
+                    "name": "Unlimited"
+                },
+                "room": {
+                    "id": 7
+                }
+            }
+        },
+        {
+            "name": "Fertiligene",
+            "progression": {
+                "xp": 7911492,
+                "level": {
+                    "value": 63,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/63.png",
+                    "progress": {
+                        "current": 289542,
+                        "required": 435650,
+                        "percentage": 66
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "xCata",
+            "progression": {
+                "xp": 7344978,
+                "level": {
+                    "value": 62,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/62.png",
+                    "progress": {
+                        "current": 144318,
+                        "required": 421290,
+                        "percentage": 34
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "SpaceHaDokeN119",
+            "progression": {
+                "xp": 6590617,
+                "level": {
+                    "value": 60,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/60.png",
+                    "progress": {
+                        "current": 189457,
+                        "required": 392570,
+                        "percentage": 48
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "Airitheist",
+            "progression": {
+                "xp": 4952925,
+                "level": {
+                    "value": 55,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/55.png",
+                    "progress": {
+                        "current": 299215,
+                        "required": 320770,
+                        "percentage": 93
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "Meijiu",
+            "progression": {
+                "xp": 4086260,
+                "level": {
+                    "value": 53,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/53.png",
+                    "progress": {
+                        "current": 31010,
+                        "required": 292050,
+                        "percentage": 10
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "THEREDZONE",
+            "progression": {
+                "xp": 3584817,
+                "level": {
+                    "value": 51,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/51.png",
+                    "progress": {
+                        "current": 74517,
+                        "required": 265950,
+                        "percentage": 28
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "HillaryClinton",
+            "progression": {
+                "xp": 3488215,
+                "level": {
+                    "value": 50,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/50.png",
+                    "progress": {
+                        "current": 230815,
+                        "required": 252900,
+                        "percentage": 91
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "Zenda",
+            "progression": {
+                "xp": 3265461,
+                "level": {
+                    "value": 50,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/50.png",
+                    "progress": {
+                        "current": 8061,
+                        "required": 252900,
+                        "percentage": 3
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "IVIove.",
+            "progression": {
+                "xp": 3129552,
+                "level": {
+                    "value": 49,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/49.png",
+                    "progress": {
+                        "current": 112002,
+                        "required": 239850,
+                        "percentage": 46
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "Kyve",
+            "progression": {
+                "xp": 2632800,
+                "level": {
+                    "value": 47,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/47.png",
+                    "progress": {
+                        "current": 56990,
+                        "required": 214940,
+                        "percentage": 26
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "unimag",
+            "progression": {
+                "xp": 2575843,
+                "level": {
+                    "value": 47,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/47.png",
+                    "progress": {
+                        "current": 33,
+                        "required": 214940,
+                        "percentage": 0
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "Mumantai",
+            "progression": {
+                "xp": 2355621,
+                "level": {
+                    "value": 45,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/45.png",
+                    "progress": {
+                        "current": 174111,
+                        "required": 191220,
+                        "percentage": 91
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "KenKun-",
+            "progression": {
+                "xp": 2339279,
+                "level": {
+                    "value": 45,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/45.png",
+                    "progress": {
+                        "current": 157769,
+                        "required": 191220,
+                        "percentage": 82
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "Amoun",
+            "progression": {
+                "xp": 2141052,
+                "level": {
+                    "value": 44,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/44.png",
+                    "progress": {
+                        "current": 138902,
+                        "required": 179360,
+                        "percentage": 77
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "Lealtad",
+            "progression": {
+                "xp": 2023142,
+                "level": {
+                    "value": 44,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/44.png",
+                    "progress": {
+                        "current": 20992,
+                        "required": 179360,
+                        "percentage": 11
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "Nymeriaa",
+            "progression": {
+                "xp": 1884111,
+                "level": {
+                    "value": 43,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/43.png",
+                    "progress": {
+                        "current": 49461,
+                        "required": 167500,
+                        "percentage": 29
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "-Lanz",
+            "progression": {
+                "xp": 1440558,
+                "level": {
+                    "value": 40,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/40.png",
+                    "progress": {
+                        "current": 43728,
+                        "required": 135160,
+                        "percentage": 32
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "I3alsamico",
+            "progression": {
+                "xp": 1412820,
+                "level": {
+                    "value": 40,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/40.png",
+                    "progress": {
+                        "current": 15990,
+                        "required": 135160,
+                        "percentage": 11
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "XxYoungxX",
+            "progression": {
+                "xp": 1224832,
+                "level": {
+                    "value": 38,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/38.png",
+                    "progress": {
+                        "current": 65982,
+                        "required": 113600,
+                        "percentage": 58
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "JustANoobie",
+            "progression": {
+                "xp": 1066708,
+                "level": {
+                    "value": 37,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/37.png",
+                    "progress": {
+                        "current": 13758,
+                        "required": 105900,
+                        "percentage": 12
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "Lezzo",
+            "progression": {
+                "xp": 750435,
+                "level": {
+                    "value": 33,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/33.png",
+                    "progress": {
+                        "current": 44085,
+                        "required": 75100,
+                        "percentage": 58
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "Bodkatolica",
+            "progression": {
+                "xp": 605979,
+                "level": {
+                    "value": 31,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/31.png",
+                    "progress": {
+                        "current": 33329,
+                        "required": 64100,
+                        "percentage": 51
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "Heyd",
+            "progression": {
+                "xp": 488784,
+                "level": {
+                    "value": 29,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/29.png",
+                    "progress": {
+                        "current": 27834,
+                        "required": 53100,
+                        "percentage": 52
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "Yerim",
+            "progression": {
+                "xp": 485685,
+                "level": {
+                    "value": 29,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/29.png",
+                    "progress": {
+                        "current": 24735,
+                        "required": 53100,
+                        "percentage": 46
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "Fardragon",
+            "progression": {
+                "xp": 472161,
+                "level": {
+                    "value": 29,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/29.png",
+                    "progress": {
+                        "current": 11211,
+                        "required": 53100,
+                        "percentage": 21
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        },
+        {
+            "name": "SonsOfAnarchy",
+            "progression": {
+                "xp": 280710,
+                "level": {
+                    "value": 24,
+                    "image": "https://xero.gg/assets/img/grade/xero/84/24.png",
+                    "progress": {
+                        "current": 18460,
+                        "required": 31880,
+                        "percentage": 57
+                    }
+                }
+            },
+            "web": {
+                "online": false
+            },
+            "game": {
+                "online": false,
+                "server": null,
+                "channel": null,
+                "room": null
+            }
+        }
+    ]
+}

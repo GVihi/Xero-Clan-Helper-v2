@@ -1,0 +1,553 @@
+{
+    "success": true,
+    "clan": {
+        "name": "LastGunners",
+        "image": "https://xero.gg/img/clan/84/1-22.png",
+        "members": [
+            {
+                "name": "PapiJuancho",
+                "rank": 1,
+                "progression": {
+                    "xp": 4225282,
+                    "level": {
+                        "value": 53,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/53.png",
+                        "progress": {
+                            "current": 170032,
+                            "required": 292050,
+                            "percentage": 58
+                        }
+                    }
+                }
+            },
+            {
+                "name": "[GAY]Shavit.",
+                "rank": 3,
+                "progression": {
+                    "xp": 8246152,
+                    "level": {
+                        "value": 64,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/64.png",
+                        "progress": {
+                            "current": 188552,
+                            "required": 450010,
+                            "percentage": 41
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Fertiligene",
+                "rank": 3,
+                "progression": {
+                    "xp": 7911492,
+                    "level": {
+                        "value": 63,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/63.png",
+                        "progress": {
+                            "current": 289542,
+                            "required": 435650,
+                            "percentage": 66
+                        }
+                    }
+                }
+            },
+            {
+                "name": "xCata",
+                "rank": 4,
+                "progression": {
+                    "xp": 7344978,
+                    "level": {
+                        "value": 62,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/62.png",
+                        "progress": {
+                            "current": 144318,
+                            "required": 421290,
+                            "percentage": 34
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Ashlek",
+                "rank": 4,
+                "progression": {
+                    "xp": 7083273,
+                    "level": {
+                        "value": 61,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/61.png",
+                        "progress": {
+                            "current": 289543,
+                            "required": 406930,
+                            "percentage": 71
+                        }
+                    }
+                }
+            },
+            {
+                "name": "SpaceHaDokeN119",
+                "rank": 4,
+                "progression": {
+                    "xp": 6590617,
+                    "level": {
+                        "value": 60,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/60.png",
+                        "progress": {
+                            "current": 189457,
+                            "required": 392570,
+                            "percentage": 48
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Rain",
+                "rank": 4,
+                "progression": {
+                    "xp": 5645263,
+                    "level": {
+                        "value": 57,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/57.png",
+                        "progress": {
+                            "current": 335653,
+                            "required": 349490,
+                            "percentage": 96
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Airitheist",
+                "rank": 4,
+                "progression": {
+                    "xp": 4952925,
+                    "level": {
+                        "value": 55,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/55.png",
+                        "progress": {
+                            "current": 299215,
+                            "required": 320770,
+                            "percentage": 93
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Meijiu",
+                "rank": 4,
+                "progression": {
+                    "xp": 4086260,
+                    "level": {
+                        "value": 53,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/53.png",
+                        "progress": {
+                            "current": 31010,
+                            "required": 292050,
+                            "percentage": 10
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Truthseeker",
+                "rank": 4,
+                "progression": {
+                    "xp": 3739517,
+                    "level": {
+                        "value": 51,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/51.png",
+                        "progress": {
+                            "current": 229217,
+                            "required": 265950,
+                            "percentage": 86
+                        }
+                    }
+                }
+            },
+            {
+                "name": "THEREDZONE",
+                "rank": 4,
+                "progression": {
+                    "xp": 3584817,
+                    "level": {
+                        "value": 51,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/51.png",
+                        "progress": {
+                            "current": 74517,
+                            "required": 265950,
+                            "percentage": 28
+                        }
+                    }
+                }
+            },
+            {
+                "name": "HillaryClinton",
+                "rank": 4,
+                "progression": {
+                    "xp": 3488215,
+                    "level": {
+                        "value": 50,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/50.png",
+                        "progress": {
+                            "current": 230815,
+                            "required": 252900,
+                            "percentage": 91
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Zenda",
+                "rank": 4,
+                "progression": {
+                    "xp": 3265461,
+                    "level": {
+                        "value": 50,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/50.png",
+                        "progress": {
+                            "current": 8061,
+                            "required": 252900,
+                            "percentage": 3
+                        }
+                    }
+                }
+            },
+            {
+                "name": "IVIove.",
+                "rank": 4,
+                "progression": {
+                    "xp": 3129552,
+                    "level": {
+                        "value": 49,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/49.png",
+                        "progress": {
+                            "current": 112002,
+                            "required": 239850,
+                            "percentage": 46
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Boyoz",
+                "rank": 4,
+                "progression": {
+                    "xp": 3017884,
+                    "level": {
+                        "value": 49,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/49.png",
+                        "progress": {
+                            "current": 334,
+                            "required": 239850,
+                            "percentage": 0
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Vladislav",
+                "rank": 4,
+                "progression": {
+                    "xp": 2948909,
+                    "level": {
+                        "value": 48,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/48.png",
+                        "progress": {
+                            "current": 158159,
+                            "required": 226800,
+                            "percentage": 69
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Kyve",
+                "rank": 4,
+                "progression": {
+                    "xp": 2632800,
+                    "level": {
+                        "value": 47,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/47.png",
+                        "progress": {
+                            "current": 56990,
+                            "required": 214940,
+                            "percentage": 26
+                        }
+                    }
+                }
+            },
+            {
+                "name": "unimag",
+                "rank": 4,
+                "progression": {
+                    "xp": 2575843,
+                    "level": {
+                        "value": 47,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/47.png",
+                        "progress": {
+                            "current": 33,
+                            "required": 214940,
+                            "percentage": 0
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Aerkl",
+                "rank": 4,
+                "progression": {
+                    "xp": 2387833,
+                    "level": {
+                        "value": 46,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/46.png",
+                        "progress": {
+                            "current": 15103,
+                            "required": 203080,
+                            "percentage": 7
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Mumantai",
+                "rank": 4,
+                "progression": {
+                    "xp": 2355621,
+                    "level": {
+                        "value": 45,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/45.png",
+                        "progress": {
+                            "current": 174111,
+                            "required": 191220,
+                            "percentage": 91
+                        }
+                    }
+                }
+            },
+            {
+                "name": "KenKun-",
+                "rank": 4,
+                "progression": {
+                    "xp": 2339279,
+                    "level": {
+                        "value": 45,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/45.png",
+                        "progress": {
+                            "current": 157769,
+                            "required": 191220,
+                            "percentage": 82
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Amoun",
+                "rank": 4,
+                "progression": {
+                    "xp": 2141052,
+                    "level": {
+                        "value": 44,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/44.png",
+                        "progress": {
+                            "current": 138902,
+                            "required": 179360,
+                            "percentage": 77
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Lealtad",
+                "rank": 4,
+                "progression": {
+                    "xp": 2023142,
+                    "level": {
+                        "value": 44,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/44.png",
+                        "progress": {
+                            "current": 20992,
+                            "required": 179360,
+                            "percentage": 11
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Nymeriaa",
+                "rank": 4,
+                "progression": {
+                    "xp": 1884111,
+                    "level": {
+                        "value": 43,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/43.png",
+                        "progress": {
+                            "current": 49461,
+                            "required": 167500,
+                            "percentage": 29
+                        }
+                    }
+                }
+            },
+            {
+                "name": "-Lanz",
+                "rank": 4,
+                "progression": {
+                    "xp": 1440558,
+                    "level": {
+                        "value": 40,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/40.png",
+                        "progress": {
+                            "current": 43728,
+                            "required": 135160,
+                            "percentage": 32
+                        }
+                    }
+                }
+            },
+            {
+                "name": "I3alsamico",
+                "rank": 4,
+                "progression": {
+                    "xp": 1412820,
+                    "level": {
+                        "value": 40,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/40.png",
+                        "progress": {
+                            "current": 15990,
+                            "required": 135160,
+                            "percentage": 11
+                        }
+                    }
+                }
+            },
+            {
+                "name": "XxYoungxX",
+                "rank": 4,
+                "progression": {
+                    "xp": 1224832,
+                    "level": {
+                        "value": 38,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/38.png",
+                        "progress": {
+                            "current": 65982,
+                            "required": 113600,
+                            "percentage": 58
+                        }
+                    }
+                }
+            },
+            {
+                "name": "JustANoobie",
+                "rank": 4,
+                "progression": {
+                    "xp": 1066708,
+                    "level": {
+                        "value": 37,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/37.png",
+                        "progress": {
+                            "current": 13758,
+                            "required": 105900,
+                            "percentage": 12
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Lezzo",
+                "rank": 4,
+                "progression": {
+                    "xp": 750435,
+                    "level": {
+                        "value": 33,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/33.png",
+                        "progress": {
+                            "current": 44085,
+                            "required": 75100,
+                            "percentage": 58
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Bodkatolica",
+                "rank": 4,
+                "progression": {
+                    "xp": 605979,
+                    "level": {
+                        "value": 31,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/31.png",
+                        "progress": {
+                            "current": 33329,
+                            "required": 64100,
+                            "percentage": 51
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Heyd",
+                "rank": 4,
+                "progression": {
+                    "xp": 488784,
+                    "level": {
+                        "value": 29,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/29.png",
+                        "progress": {
+                            "current": 27834,
+                            "required": 53100,
+                            "percentage": 52
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Yerim",
+                "rank": 4,
+                "progression": {
+                    "xp": 485685,
+                    "level": {
+                        "value": 29,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/29.png",
+                        "progress": {
+                            "current": 24735,
+                            "required": 53100,
+                            "percentage": 46
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Fardragon",
+                "rank": 4,
+                "progression": {
+                    "xp": 472161,
+                    "level": {
+                        "value": 29,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/29.png",
+                        "progress": {
+                            "current": 11211,
+                            "required": 53100,
+                            "percentage": 21
+                        }
+                    }
+                }
+            },
+            {
+                "name": "SonsOfAnarchy",
+                "rank": 4,
+                "progression": {
+                    "xp": 280710,
+                    "level": {
+                        "value": 24,
+                        "image": "https://xero.gg/assets/img/grade/xero/84/24.png",
+                        "progress": {
+                            "current": 18460,
+                            "required": 31880,
+                            "percentage": 57
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

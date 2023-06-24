@@ -1,6 +1,6 @@
 # Xero Clan Helper Bot v2
 
-![thumbnail](https://github.com/GVihi/Xero-Clan-Helper-v2/blob/main/images/S4L_Icon.png)
+![thumbnail](https://github.com/GVihi/Xero-Clan-Helper-v2/blob/main/images/S4L_Icon_thumbnail.png)
 
 Xero Clan Helper is a simple Discord Bot to spice up your Xero Clan Server
 

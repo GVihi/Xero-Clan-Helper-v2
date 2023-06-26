@@ -78,8 +78,8 @@ def run_discord_bot():
     #Currently configured to get clan data of bot owner
     #Bot is currently intended to be used in a private Discord server of a Xero clan
     #TODO: Make it possible to /register users and displays their Clan members
-    @bot.tree.command(name="myclanold")
-    async def myclanold(interaction: discord.Interaction):
+    @bot.tree.command(name="myclanlegacy")
+    async def myclanoldlegacy(interaction: discord.Interaction):
         gotData = False
         try:
             r = requests.get("https://xero.gg/api/self/social/clan", headers={"x-api-access-key-id" : key, "x-api-secret-access-key": secret})
@@ -115,7 +115,7 @@ def run_discord_bot():
                 embed = discord.Embed(
                     colour=discord.Colour.brand_green(),
                     title="Memebers list",
-                    description=str(online_counter) + " clan members online" 
+                    description=str(online_counter) + " clan members online\n__**This is a legacy command that only works for LastGunners. Please use the /myclan command**__" 
                 )
 
                 embed.set_author(name="Xero Clan Helper", icon_url=bot.user.avatar.url)

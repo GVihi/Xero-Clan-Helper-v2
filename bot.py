@@ -5,6 +5,7 @@ import requests
 import json
 from bs4 import BeautifulSoup
 from credentials import *
+import os.path
 
 def run_discord_bot():
     intents = discord.Intents.default()
@@ -193,6 +194,134 @@ def run_discord_bot():
 
             await interaction.response.send_message(embed=embed)
 
-            
+    @bot.tree.command(name="eventchecksubscribe")
+    async def eventchecksubscribe(interaction: discord.Interaction):
+        file_name = "user_ids.json"
+        if not os.path.isfile(file_name):
+            empty_file = {
+                "ids" : [
+                    {"id": 0}
+                ]
+            }
+            with open(file_name, 'w') as f:
+                json.dump(empty_file, f, ensure_ascii=False, indent=4)
 
+        if os.path.isfile(file_name):
+            data = ""
+            with open(file_name, 'r') as f:
+                data = json.load(f)
+            
+            data = json.dumps(data, indent=4)
+            data = json.loads(data)
+
+            user_id = interaction.user.id
+
+            user_exists = False
+
+            for x in data['ids']:
+                if x['id'] == interaction.user.id:
+                    user_exists = True
+
+            if user_exists:
+                await interaction.response.send_message("You are already subscribed to updates")
+            else:
+                with open(file_name, "w") as f:
+
+                    new_user = {
+                        "id": user_id
+                    }
+
+                    data['ids'].append(new_user)
+
+                    json.dump(data, f, ensure_ascii=False, indent=4)
+                
+                with open(file_name, "r") as f:
+                    data = json.load(f)
+
+                    data = json.dumps(data, indent=4)
+                    data = json.loads(data)
+
+                    #print(data)
+
+                    user_added = False
+
+                    for x in data['ids']:
+                        if x['id'] == interaction.user.id:
+                            user_added = True
+                    
+                    if user_added:
+                        await interaction.response.send_message("Subscribed sucessfully!")
+                    else:
+                        await interaction.response.send_message("Something went wrong, please try again")
+
+    @bot.tree.command(name="registermyclan")
+    @app_commands.describe(key = "Xero API Key", secret = "Xero API Secret")
+    async def registermyclan(interaction: discord.Interaction, key: str, secret: str):
+        file_name = "api_keys.json"
+        if not os.path.isfile(file_name):
+            empty_file = {
+                "keys": [
+                    {
+                        "id": 0,
+                        "key": 0,
+                        "secret": 0
+                    }
+                ]
+            }
+            with open(file_name, "w") as f:
+                json.dump(empty_file, f, ensure_ascii=False, indent=4)
+
+        if os.path.isfile(file_name):
+            data = ""
+            with open(file_name, "r") as f:
+                data = json.load(f)
+
+            data = json.dumps(data, indent=4)
+            data = json.loads(data)
+
+            user_id = interaction.user.id
+
+            user_exists = False
+
+            for x in data['keys']:
+                if x['id'] == user_id:
+                    user_exists = True
+
+            if user_exists:
+                await interaction.response.send_message("You have already registered your clan")
+            else:
+                ####TODO####
+                ####!! VERIFY API CREDENTIALS HERE BEFORE WRITING TO FILE !!
+                ####TODO####
+                with open(file_name, "w") as f:
+
+                    new_entry = {
+                        "id": user_id,
+                        "key": key,
+                        "secret": secret
+                    }
+
+                    data['keys'].append(new_entry)
+
+                    json.dump(data, f, ensure_ascii=False, indent=4)
+
+                with open(file_name, "r") as f:
+                    data = json.load(f)
+
+                    data = json.dumps(data, indent=4)
+                    data = json.loads(data)
+
+                    keys_added = False
+
+                    for x in data['keys']:
+                        if x['id'] == user_id:
+                            keys_added = True
+
+                    if keys_added:
+                        await interaction.response.send_message("Clan registered sucessfully")
+                    else:
+                        await interaction.response.send_message("Something went wrong, please try again")
+
+        
+        
     bot.run(TOKEN)

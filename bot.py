@@ -78,8 +78,8 @@ def run_discord_bot():
     #Currently configured to get clan data of bot owner
     #Bot is currently intended to be used in a private Discord server of a Xero clan
     #TODO: Make it possible to /register users and displays their Clan members
-    @bot.tree.command(name="myclan")
-    async def myclan(interaction: discord.Interaction):
+    @bot.tree.command(name="myclanold")
+    async def myclanold(interaction: discord.Interaction):
         gotData = False
         try:
             r = requests.get("https://xero.gg/api/self/social/clan", headers={"x-api-access-key-id" : key, "x-api-secret-access-key": secret})
@@ -330,7 +330,74 @@ def run_discord_bot():
                 else:
                     await interaction.response.send_message(f"Failed to register your clan: {res['text']}")
 
+    @bot.tree.command(name="myclan")
+    async def myclan(interaction: discord.Interaction):
+        file_name = "api_keys.json"
+        if not os.path.isfile(file_name):
+           await interaction.response.send_message(f"JSON file containing API data missing. Contact the developer!")
+        else:
+            data = ""
+            with open(file_name, "r") as f:
+                data = json.load(f)
 
-        
+            data = json.dumps(data, indent=4)
+            data = json.loads(data)
+
+            user_id = interaction.user.id
+            registered = False
+
+            for x in data['keys']:
+                if x['id'] == user_id:
+                    registered = True
+                    api_key = x['key']
+                    api_secret = x['secret']
+
+            if not registered:
+                await interaction.response.send_message(f"Clan not yet registered. Please use the /registermyclan command first")
+            else:
+                r = requests.get("https://xero.gg/api/self/social/clan", headers={"x-api-access-key-id" : api_key, "x-api-secret-access-key": api_secret})
+                doc = BeautifulSoup(r.text, "html.parser")
+
+                doc = str(doc)
+                data = json.loads(doc)
+                data = json.dumps(data, indent=4)
+                data = json.loads(data)
+
+                if data['success']:
+                    names = ""
+                    levels = ""
+                    onlines = ""
+                    onlines_web = ""
+                    online_counter = 0
+                    for x in data['players']:
+                        names+= x['name'] + "\n"
+                        levels+= str(x['progression']['level']['value']) + "\n"
+                        if x['game']['online'] == True:
+                            onlines+= "__**Online**__" + "\n"
+                            online_counter+=1
+                        else:
+                            onlines+= "Offline" + "\n"
+                        if x['web']['online'] == True:
+                            onlines_web+= "Online" + "\n"
+                        else:
+                            onlines_web+= "Offline" + "\n"
+                    
+                    embed = discord.Embed(
+                        colour=discord.Colour.brand_green(),
+                        title="Memebers list",
+                        description=str(online_counter) + " clan members online" 
+                    )
+
+                    embed.set_author(name="Xero Clan Helper", icon_url=bot.user.avatar.url)
+                    embed.set_thumbnail(url="https://assets.xero.gg/avatars/e0fd498f37a249815f11f788c3c65ba49e8148dd63ba97a5414bf42969d4dfce/4fF8HuqOSiOJ.png")
+                    embed.set_footer(text="Created by @notashlek")
+
+                    embed.add_field(name="Members", value=names)
+                    embed.add_field(name="Status", value=onlines)
+
+                    await interaction.response.send_message(embed=embed)
+                else:
+                    await interaction.response.send_message(f"Error processing your command: {data['text']}")
+
 
     bot.run(TOKEN)

@@ -255,8 +255,8 @@ def run_discord_bot():
                         await interaction.response.send_message("Something went wrong, please try again")
 
     @bot.tree.command(name="registermyclan")
-    @app_commands.describe(key = "Xero API Key", secret = "Xero API Secret")
-    async def registermyclan(interaction: discord.Interaction, key: str, secret: str):
+    @app_commands.describe(api_key = "Xero API Key", api_secret = "Xero API Secret")
+    async def registermyclan(interaction: discord.Interaction, api_key: str, api_secret: str):
         file_name = "api_keys.json"
         if not os.path.isfile(file_name):
             empty_file = {
@@ -290,37 +290,46 @@ def run_discord_bot():
             if user_exists:
                 await interaction.response.send_message("You have already registered your clan")
             else:
-                ####TODO####
-                ####!! VERIFY API CREDENTIALS HERE BEFORE WRITING TO FILE !!
-                ####TODO####
-                with open(file_name, "w") as f:
+                r = requests.get("https://xero.gg/api/self/social/clan", headers={"x-api-access-key-id" : api_key, "x-api-secret-access-key": api_secret})
+                doc = BeautifulSoup(r.text, "html.parser")
 
-                    new_entry = {
-                        "id": user_id,
-                        "key": key,
-                        "secret": secret
-                    }
+                doc = str(doc)
+                res = json.loads(doc)
+                res = json.dumps(res, indent=4)
+                res = json.loads(res)
 
-                    data['keys'].append(new_entry)
+                if res['success'] == True:
+                    with open(file_name, "w") as f:
 
-                    json.dump(data, f, ensure_ascii=False, indent=4)
+                        new_entry = {
+                            "id": user_id,
+                            "key": api_key,
+                            "secret": api_secret
+                        }
 
-                with open(file_name, "r") as f:
-                    data = json.load(f)
+                        data['keys'].append(new_entry)
 
-                    data = json.dumps(data, indent=4)
-                    data = json.loads(data)
+                        json.dump(data, f, ensure_ascii=False, indent=4)
 
-                    keys_added = False
+                    with open(file_name, "r") as f:
+                        data = json.load(f)
 
-                    for x in data['keys']:
-                        if x['id'] == user_id:
-                            keys_added = True
+                        data = json.dumps(data, indent=4)
+                        data = json.loads(data)
 
-                    if keys_added:
-                        await interaction.response.send_message("Clan registered sucessfully")
-                    else:
-                        await interaction.response.send_message("Something went wrong, please try again")
+                        keys_added = False
+
+                        for x in data['keys']:
+                            if x['id'] == user_id:
+                                keys_added = True
+
+                        if keys_added:
+                            await interaction.response.send_message("Clan registered sucessfully")
+                        else:
+                            await interaction.response.send_message("Something went wrong, please try again")
+                else:
+                    await interaction.response.send_message(f"Failed to register your clan: {res['text']}")
+
 
         
 

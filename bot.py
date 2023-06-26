@@ -138,8 +138,8 @@ def run_discord_bot():
             title="Supported Commands"
         )
 
-        cmds = "/clan [Clan Name]\n/myclan\n/help"
-        descs = "Displays members and levels of desired Clan\nDisplays members and statuses of your clan\nDisplays supported commands"
+        cmds = "/clan [Clan Name]\n/myclan\n/help\n/eventcheck\n/eventchecksubscribe\n\n/registermyclan"
+        descs = "Displays members and levels of desired Clan\nDisplays members and statuses of your clan\nDisplays supported commands\nCheck if there is an ongoing event - soon to be deprecated\nSubscribes you to receive a DM any time there's an ongoing event\nA way to register your clan for use with /myclan"
         embed.add_field(name="Command", value=cmds)
         embed.add_field(name="Description", value=descs)
         embed.set_author(name="Xero Clan Helper", icon_url=bot.user.avatar.url)
@@ -323,5 +323,5 @@ def run_discord_bot():
                         await interaction.response.send_message("Something went wrong, please try again")
 
         
-        
+
     bot.run(TOKEN)

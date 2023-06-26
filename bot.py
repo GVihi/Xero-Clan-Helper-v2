@@ -151,6 +151,16 @@ def run_discord_bot():
     #Check challenge count (> 3 means there is a bonus challenge meaning an ongoing event)
     @bot.tree.command(name="eventcheck")
     async def eventcheck(interaction: discord.Interaction):
+
+        #####
+        ##### TODO: For the time being, implement a broadcast method in here, so only one
+        ##### clan member needs to run the command and in the 'event' of an ongoing game event
+        ##### Broadcast "New Event" message to registered users' DM's
+        #####
+
+        #dm = await interaction.user.create_dm()
+        #await dm.send("Test")
+
         gotData = False
         try:
             r = requests.get("https://xero.gg/api/challenge", headers={"x-api-access-key-id" : key, "x-api-secret-access-key": secret})

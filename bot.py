@@ -210,7 +210,7 @@ def run_discord_bot():
         if not os.path.isfile(file_name):
             empty_file = {
                 "ids" : [
-                    {"id": 0}
+                    
                 ]
             }
             with open(file_name, 'w') as f:
@@ -271,11 +271,7 @@ def run_discord_bot():
         if not os.path.isfile(file_name):
             empty_file = {
                 "keys": [
-                    {
-                        "id": 0,
-                        "key": 0,
-                        "secret": 0
-                    }
+                    
                 ]
             }
             with open(file_name, "w") as f:
@@ -408,6 +404,20 @@ def run_discord_bot():
                     await interaction.response.send_message(embed=embed)
                 else:
                     await interaction.response.send_message(f"Error processing your command: {data['text']}")
+
+    @bot.tree.command(name="crashtest")
+    async def crashtest(interaction: discord.Interaction):
+        myid = 305035767170990081
+        if interaction.user.id != myid:
+            await interaction.response.send_message(f"You do not have permission to use this command")
+        else:
+            word = "lol"
+            await interaction.response.send_message(f"{word[10]}")
+
+    @bot.tree.error
+    async def on_app_command_error(interaction: discord.Integration, error):
+        myid = '<@305035767170990081>'
+        await interaction.response.send_message(f"{myid}\n**Something went wrong**\n```{error}```")
 
 
     bot.run(TOKEN)

@@ -204,7 +204,7 @@ def run_discord_bot():
                     embed = discord.Embed(
                         colour = discord.Colour.gold(),
                         title="**!!! NEW EVENT !!!**",
-                        description= mentions + "\nHead over to [Challenges](https://xero.gg/challenges) to check it out"
+                        description="\nHead over to [Challenges](https://xero.gg/challenges) to check it out"
                     )
                 else:
                     embed = discord.Embed(
@@ -217,7 +217,7 @@ def run_discord_bot():
                 embed.set_author(name="Xero Clan Helper", icon_url=bot.user.avatar.url)
                 embed.set_footer(text="Created by @notashlek")
 
-                await interaction.response.send_message(embed=embed)
+                await interaction.response.send_message(mentions, embed=embed)
 
     @bot.tree.command(name="eventchecksubscribe")
     async def eventchecksubscribe(interaction: discord.Interaction):

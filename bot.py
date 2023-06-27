@@ -138,8 +138,8 @@ def run_discord_bot():
             title="Supported Commands"
         )
 
-        cmds = "/clan [Clan Name]\n/myclan\n/help\n/eventcheck\n/eventchecksubscribe\n\n/registermyclan"
-        descs = "Displays members and levels of desired Clan\nDisplays members and statuses of your clan\nDisplays supported commands\nCheck if there is an ongoing event - soon to be deprecated\nSubscribes you to receive a DM any time there's an ongoing event\nA way to register your clan for use with /myclan"
+        cmds = "/clan [Clan Name]\n/myclan\n/help\n/eventcheck\n/eventchecksubscribe\n\n/eventcheckunsubscribe\n/registermyclan\n/unregistermyclan"
+        descs = "Displays members and levels of desired Clan\nDisplays members and statuses of your clan\nDisplays supported commands\nCheck if there is an ongoing event\nSubscribes you to receive be mentioned any time there's an ongoing event\nUnsubscribe from event checks\nA way to register your clan for use with /myclan\nUnregister your clan"
         embed.add_field(name="Command", value=cmds)
         embed.add_field(name="Description", value=descs)
         embed.set_author(name="Xero Clan Helper", icon_url=bot.user.avatar.url)
@@ -157,52 +157,67 @@ def run_discord_bot():
         ##### clan member needs to run the command and in the 'event' of an ongoing game event
         ##### Broadcast "New Event" message to registered users' DM's
         #####
+        file_name = "user_ids.json"
+        if not os.path.isfile(file_name):
+            await interaction.response.send_message(f"```JSON file containing ID data missing. Contact the developer!\n@notashlek```")
+        else:
 
-        #dm = await interaction.user.create_dm()
-        #await dm.send("Test")
+            ids = ""
+            with open(file_name, "r") as f:
+                ids = json.load(f)
 
-        gotData = False
-        try:
-            r = requests.get("https://xero.gg/api/challenge", headers={"x-api-access-key-id" : key, "x-api-secret-access-key": secret})
-            doc = BeautifulSoup(r.text, "html.parser")
-            doc = str(doc)
-            data = json.loads(doc)
-            data = json.dumps(data, indent=4)
-            data = json.loads(data)
-            gotData = True
-        except Exception as e:
-            print(f"Unable to reach Xero API! {str(e)}")
+            ids = json.dumps(ids, indent=4)
+            ids = json.loads(ids)
 
-        if gotData:
-            challenges = ""
-            nChallenges = 0
+            mentions = ""
+            for x in ids['ids']:
+                mentions+= "<@" + str(x['id']) + "> "
 
-            for x in data['challenges']:
-                challenges+= x['name'] + "\n"
-                nChallenges+=1
-            
-            #Testing purposes - no event at time of testing
-            #challenges+= "Limited"
-            #nChallenges+=1
+            #dm = await interaction.user.create_dm()
+            #await dm.send("Test")
 
-            if nChallenges > 3:
-                embed = discord.Embed(
-                    colour = discord.Colour.gold(),
-                    title="**!!! NEW EVENT !!!**",
-                    description="Head over to [Challenges](https://xero.gg/challenges) to check it out"
-                )
-            else:
-                embed = discord.Embed(
-                    colour = discord.Colour.blue(),
-                    title="No event",
-                    description="There is currently no ongoing event"
-                )
+            gotData = False
+            try:
+                r = requests.get("https://xero.gg/api/challenge", headers={"x-api-access-key-id" : key, "x-api-secret-access-key": secret})
+                doc = BeautifulSoup(r.text, "html.parser")
+                doc = str(doc)
+                data = json.loads(doc)
+                data = json.dumps(data, indent=4)
+                data = json.loads(data)
+                gotData = True
+            except Exception as e:
+                print(f"Unable to reach Xero API! {str(e)}")
 
-            embed.add_field(name="Challenges", value=challenges)
-            embed.set_author(name="Xero Clan Helper", icon_url=bot.user.avatar.url)
-            embed.set_footer(text="Created by @notashlek")
+            if gotData:
+                challenges = ""
+                nChallenges = 0
 
-            await interaction.response.send_message(embed=embed)
+                for x in data['challenges']:
+                    challenges+= x['name'] + "\n"
+                    nChallenges+=1
+                
+                #Testing purposes - no event at time of testing
+                #challenges+= "Limited"
+                #nChallenges+=1
+
+                if nChallenges > 3:
+                    embed = discord.Embed(
+                        colour = discord.Colour.gold(),
+                        title="**!!! NEW EVENT !!!**",
+                        description= mentions + "\nHead over to [Challenges](https://xero.gg/challenges) to check it out"
+                    )
+                else:
+                    embed = discord.Embed(
+                        colour = discord.Colour.blue(),
+                        title="No event",
+                        description="There is currently no ongoing event"
+                    )
+
+                embed.add_field(name="Challenges", value=challenges)
+                embed.set_author(name="Xero Clan Helper", icon_url=bot.user.avatar.url)
+                embed.set_footer(text="Created by @notashlek")
+
+                await interaction.response.send_message(embed=embed)
 
     @bot.tree.command(name="eventchecksubscribe")
     async def eventchecksubscribe(interaction: discord.Interaction):
@@ -260,7 +275,7 @@ def run_discord_bot():
                             user_added = True
                     
                     if user_added:
-                        await interaction.response.send_message("Subscribed sucessfully!")
+                        await interaction.response.send_message("Subscribed successfully!")
                     else:
                         await interaction.response.send_message("Something went wrong, please try again")
 
@@ -330,7 +345,7 @@ def run_discord_bot():
                                 keys_added = True
 
                         if keys_added:
-                            await interaction.response.send_message("Clan registered sucessfully")
+                            await interaction.response.send_message("Clan registered successfully")
                         else:
                             await interaction.response.send_message("Something went wrong, please try again")
                 else:
@@ -340,7 +355,7 @@ def run_discord_bot():
     async def myclan(interaction: discord.Interaction):
         file_name = "api_keys.json"
         if not os.path.isfile(file_name):
-           await interaction.response.send_message(f"JSON file containing API data missing. Contact the developer!")
+           await interaction.response.send_message(f"```JSON file containing API data missing. Contact the developer!\n@notashlek```")
         else:
             data = ""
             with open(file_name, "r") as f:
@@ -419,5 +434,116 @@ def run_discord_bot():
         myid = '<@305035767170990081>'
         await interaction.response.send_message(f"{myid}\n**Something went wrong**\n```{error}```")
 
+    @bot.tree.command(name="eventcheckunsubscribe")
+    async def eventcheckunsubscribe(interaction: discord.Interaction):
+        file_name = "user_ids.json"
+        if not os.path.isfile(file_name):
+           await interaction.response.send_message(f"```JSON file containing ID data missing. Contact the developer!\n@notashlek```")
+        else:
+            with open(file_name, "r") as f:
+                data = json.load(f)
+
+            data = json.dumps(data, indent=4)
+            data = json.loads(data)
+
+            rm_id = interaction.user.id
+
+            subbed = False
+            for x in data['ids']:
+                if x['id'] == rm_id:
+                    subbed = True
+
+            if not subbed:
+                await interaction.response.send_message(f"You are not currently subscribed to event checks!")
+            else:
+                new_data = {
+                    "ids": [
+
+                    ]
+                }
+
+                for x in data['ids']:
+                    if x['id'] != rm_id:
+                        entry = {
+                            "id": x['id']
+                        }
+
+                        new_data["ids"].append(entry)
+
+                with open(file_name, "w") as f:
+                    json.dump(new_data, f, indent=4)
+
+                with open(file_name, "r") as f:
+                    data = json.load(f)
+
+                data = json.dumps(data, indent=4)
+                data = json.loads(data)
+
+                subbed = False
+                for x in data['ids']:
+                    if x['id'] == rm_id:
+                        subbed = True
+
+                if not subbed:
+                    await interaction.response.send_message(f"Unsubscribed successfully!")
+                else:
+                    await interaction.response.send_message(f"Something went wrong, please try again!")
+
+    @bot.tree.command(name="unregistermyclan")
+    async def unregistermyclan(interaction: discord.Interaction):
+        file_name = "api_keys.json"
+        if not os.path.isfile(file_name):
+            await interaction.response.send_message(f"```JSON file containing API data missing. Contact the developer!\n@notashlek```")
+        else:
+            with open(file_name, "r") as f:
+                data = json.load(f)
+            
+            data = json.dumps(data, indent=4)
+            data = json.loads(data)
+
+            rm_id = interaction.user.id
+
+            registered = False
+            for x in data['keys']:
+                if x['id'] == rm_id:
+                    registered = True
+
+            if not registered:
+                await interaction.response.send_message(f"Your clan is currently not registered!")
+            else:
+                new_data = {
+                    "keys": [
+
+                    ]
+                }
+
+                for x in data['keys']:
+                    if x['id'] != rm_id:
+                        entry = {
+                            "id": x['id'],
+                            "key": x['key'],
+                            "secret": x['secret']
+                        }
+
+                        new_data['keys'].append(entry)
+
+                with open(file_name, "w") as f:
+                    json.dump(new_data, f, indent=4)
+
+                with open(file_name, "r") as f:
+                    data = json.load(f)
+            
+                data = json.dumps(data, indent=4)
+                data = json.loads(data)
+
+                registered = False
+                for x in data['keys']:
+                    if x['id'] == rm_id:
+                        registered = True
+
+                if not registered:
+                    await interaction.response.send_message(f"Unsubscribed successfully!")
+                else:
+                    await interaction.response.send_message(f"Something went wrong, please try again!")
 
     bot.run(TOKEN)

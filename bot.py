@@ -217,7 +217,10 @@ def run_discord_bot():
                 embed.set_author(name="Xero Clan Helper", icon_url=bot.user.avatar.url)
                 embed.set_footer(text="Created by @notashlek")
 
-                await interaction.response.send_message(mentions, embed=embed)
+                if nChallenges > 3:
+                    await interaction.response.send_message(mentions, embed=embed)
+                else:
+                    await interaction.response.send_message(embed=embed)
 
     @bot.tree.command(name="eventchecksubscribe")
     async def eventchecksubscribe(interaction: discord.Interaction):

@@ -166,6 +166,7 @@ def run_discord_bot():
         ##### Broadcast "New Event" message to registered users' DM's
         #####
         file_name = "user_ids.json"
+        server_id = interaction.guild_id
         if not os.path.isfile(file_name):
             await interaction.response.send_message(f"```JSON file containing ID data missing. Contact the developer!\n@notashlek```")
         else:
@@ -179,7 +180,8 @@ def run_discord_bot():
 
             mentions = ""
             for x in ids['ids']:
-                mentions+= "<@" + str(x['id']) + "> "
+                if x['sid'] == server_id:
+                    mentions+= "<@" + str(x['id']) + "> "
 
             #dm = await interaction.user.create_dm()
             #await dm.send("Test")
@@ -251,12 +253,14 @@ def run_discord_bot():
             data = json.loads(data)
 
             user_id = interaction.user.id
+            server_id = interaction.guild_id
 
             user_exists = False
 
             for x in data['ids']:
                 if x['id'] == interaction.user.id:
-                    user_exists = True
+                    if x['sid'] == server_id:
+                        user_exists = True
 
             if user_exists:
                 await interaction.response.send_message("You are already subscribed to updates")
@@ -264,6 +268,7 @@ def run_discord_bot():
                 with open(file_name, "w") as f:
 
                     new_user = {
+                        "sid": server_id,
                         "id": user_id
                     }
 
@@ -283,7 +288,8 @@ def run_discord_bot():
 
                     for x in data['ids']:
                         if x['id'] == interaction.user.id:
-                            user_added = True
+                            if x['sid'] == server_id:
+                                user_added = True
                     
                     if user_added:
                         await interaction.response.send_message("Subscribed successfully!")
@@ -460,11 +466,13 @@ def run_discord_bot():
             data = json.loads(data)
 
             rm_id = interaction.user.id
+            server_id = interaction.guild_id
 
             subbed = False
             for x in data['ids']:
                 if x['id'] == rm_id:
-                    subbed = True
+                    if x['sid'] == server_id:
+                        subbed = True
 
             if not subbed:
                 await interaction.response.send_message(f"You are not currently subscribed to event checks!")
@@ -476,8 +484,11 @@ def run_discord_bot():
                 }
 
                 for x in data['ids']:
-                    if x['id'] != rm_id:
+                    #print(f"{x['id']} - {rm_id}")
+                    #print(f"{x['sid']} - {server_id}")
+                    if x['sid'] != server_id or x['id'] != rm_id:
                         entry = {
+                            "sid": x['sid'],
                             "id": x['id']
                         }
 
@@ -495,7 +506,8 @@ def run_discord_bot():
                 subbed = False
                 for x in data['ids']:
                     if x['id'] == rm_id:
-                        subbed = True
+                        if x['sid'] == server_id:
+                            subbed = True
 
                 if not subbed:
                     await interaction.response.send_message(f"Unsubscribed successfully!")

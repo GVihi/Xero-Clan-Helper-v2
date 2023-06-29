@@ -144,10 +144,10 @@ def run_discord_bot():
             title="Supported Commands"
         )
 
-        cmds = "/clan [Clan Name]\n/myclan\n/lg\n\n/help\n/eventcheck\n/eventchecksubscribe\n\n/eventcheckunsubscribe\n/registermyclan\n/unregistermyclan\n/eventtimer [Minutes]\n\n"
+        cmds = "/clan [Clan Name]\n/myclan\n/lg\n\n/help\n/eventcheck\n/eventchecksubscribe\n\n/eventcheckunsubscribe\n/registermyclan\n/unregistermyclan\n/eventtimer [Minutes]\n\n\n"
         descs = "Displays members and levels of desired Clan\nDisplays members and statuses of your clan\nDisplays LastGunners info - can only be executed in LastGunners' Discord Server\n"
-        descs+= "Displays supported commands\nCheck if there is an ongoing event\nSubscribes you to receive be mentioned any time there's an ongoing event\nUnsubscribe from event checks\n"
-        descs+= "A way to register your clan for use with /myclan\nUnregister your clan\nStart a timer - useful during events with time requirements"
+        descs+= "Displays supported commands\nCheck if there is an ongoing event\nSubscribes you to receive a mention any time there's an ongoing event\nUnsubscribe from event checks\n"
+        descs+= "A way to register your clan for use with /myclan\nUnregister your clan\nStart a timer - useful during events with time requirements. To stop the timer: Delete the __*Xero Clan Helper is thinking...*__ message"
         embed.add_field(name="Command", value=cmds)
         embed.add_field(name="Description", value=descs)
         embed.set_author(name="Xero Clan Helper", icon_url=bot.user.avatar.url)
@@ -579,9 +579,13 @@ def run_discord_bot():
             await interaction.response.send_message(f"Duration can only be between 1 and 30 minutes!")
         else:
             user_id = interaction.user.id
+            #await interaction.response.send_message(f"<@{user_id}>")
             await interaction.response.defer()
             await asyncio.sleep(minutes * 60)
-            await interaction.followup.send(f"{minutes} minutes have passed. **You can now end the match!** <@{user_id}>")
+            await interaction.followup.send(f"{minutes} minutes have passed. **You can now end the match!** <@{str(user_id)}>")
+            #await interaction.followup.send("<@" + str(user_id) + ">\n" + str(minutes) + " minutes have passed. **You can now end the match!**")
+            #^ Y u no ping user >:(
+            #await interaction.followup.send(f"<@{user_id}>")
         #await interaction.response.send_message(f"**You can now end the match!**")
 
     

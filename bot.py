@@ -6,6 +6,8 @@ import json
 from bs4 import BeautifulSoup
 from credentials import *
 import os.path
+import time
+import asyncio
 
 def run_discord_bot():
     intents = discord.Intents.default()
@@ -78,56 +80,60 @@ def run_discord_bot():
     #Currently configured to get clan data of bot owner
     #Bot is currently intended to be used in a private Discord server of a Xero clan
     #TODO: Make it possible to /register users and displays their Clan members
-    @bot.tree.command(name="myclanlegacy")
-    async def myclanoldlegacy(interaction: discord.Interaction):
-        gotData = False
-        try:
-            r = requests.get("https://xero.gg/api/self/social/clan", headers={"x-api-access-key-id" : key, "x-api-secret-access-key": secret})
-            doc = BeautifulSoup(r.text, "html.parser")
-            doc = str(doc)
-            data = json.loads(doc)
-            data = json.dumps(data, indent=4)
-            data = json.loads(data)
-            gotData = True
-        except Exception as e:
-            print(f"Unable to reach Xero API! {str(e)}")
+    @bot.tree.command(name="lg")
+    async def lg(interaction: discord.Interaction):
 
-        if gotData:
-            if data['success'] == True:
-                names = ""
-                levels = ""
-                onlines = ""
-                onlines_web = ""
-                online_counter = 0
-                for x in data['players']:
-                    names+= x['name'] + "\n"
-                    levels+= str(x['progression']['level']['value']) + "\n"
-                    if x['game']['online'] == True:
-                        onlines+= "__**Online**__" + "\n"
-                        online_counter+=1
-                    else:
-                        onlines+= "Offline" + "\n"
-                    if x['web']['online'] == True:
-                        onlines_web+= "Online" + "\n"
-                    else:
-                        onlines_web+= "Offline" + "\n"
-                
-                embed = discord.Embed(
-                    colour=discord.Colour.brand_green(),
-                    title="Memebers list",
-                    description=str(online_counter) + " clan members online\n__**This is a legacy command that only works for LastGunners. Please use the /myclan command**__" 
-                )
+        if interaction.guild_id != 742438510790967304:
+            await interaction.response.send_message(f"This command is only usable in the LastGunners' Discord Server")
+        else:
+            gotData = False
+            try:
+                r = requests.get("https://xero.gg/api/self/social/clan", headers={"x-api-access-key-id" : key, "x-api-secret-access-key": secret})
+                doc = BeautifulSoup(r.text, "html.parser")
+                doc = str(doc)
+                data = json.loads(doc)
+                data = json.dumps(data, indent=4)
+                data = json.loads(data)
+                gotData = True
+            except Exception as e:
+                print(f"Unable to reach Xero API! {str(e)}")
 
-                embed.set_author(name="Xero Clan Helper", icon_url=bot.user.avatar.url)
-                embed.set_thumbnail(url="https://assets.xero.gg/avatars/e0fd498f37a249815f11f788c3c65ba49e8148dd63ba97a5414bf42969d4dfce/4fF8HuqOSiOJ.png")
-                embed.set_footer(text="Created by @notashlek")
+            if gotData:
+                if data['success'] == True:
+                    names = ""
+                    levels = ""
+                    onlines = ""
+                    onlines_web = ""
+                    online_counter = 0
+                    for x in data['players']:
+                        names+= x['name'] + "\n"
+                        levels+= str(x['progression']['level']['value']) + "\n"
+                        if x['game']['online'] == True:
+                            onlines+= "__**Online**__" + "\n"
+                            online_counter+=1
+                        else:
+                            onlines+= "Offline" + "\n"
+                        if x['web']['online'] == True:
+                            onlines_web+= "Online" + "\n"
+                        else:
+                            onlines_web+= "Offline" + "\n"
+                    
+                    embed = discord.Embed(
+                        colour=discord.Colour.brand_green(),
+                        title="Memebers list",
+                        description=str(online_counter) + " clan members online" 
+                    )
 
-                embed.add_field(name="Members", value=names)
-                embed.add_field(name="Status", value=onlines)
+                    embed.set_author(name="Xero Clan Helper", icon_url=bot.user.avatar.url)
+                    embed.set_thumbnail(url="https://assets.xero.gg/avatars/e0fd498f37a249815f11f788c3c65ba49e8148dd63ba97a5414bf42969d4dfce/4fF8HuqOSiOJ.png")
+                    embed.set_footer(text="Created by @notashlek")
 
-                await interaction.response.send_message(embed=embed)
-            else:
-                await interaction.response.send_message(f"Error processing your command: {data['text']}")
+                    embed.add_field(name="Members", value=names)
+                    embed.add_field(name="Status", value=onlines)
+
+                    await interaction.response.send_message(embed=embed)
+                else:
+                    await interaction.response.send_message(f"Error processing your command: {data['text']}")
     
     #/help command
     #Displays all available commands, their use-case and function
@@ -138,8 +144,10 @@ def run_discord_bot():
             title="Supported Commands"
         )
 
-        cmds = "/clan [Clan Name]\n/myclan\n/help\n/eventcheck\n/eventchecksubscribe\n\n/eventcheckunsubscribe\n/registermyclan\n/unregistermyclan"
-        descs = "Displays members and levels of desired Clan\nDisplays members and statuses of your clan\nDisplays supported commands\nCheck if there is an ongoing event\nSubscribes you to receive be mentioned any time there's an ongoing event\nUnsubscribe from event checks\nA way to register your clan for use with /myclan\nUnregister your clan"
+        cmds = "/clan [Clan Name]\n/myclan\n/lg\n\n/help\n/eventcheck\n/eventchecksubscribe\n\n/eventcheckunsubscribe\n/registermyclan\n/unregistermyclan\n/eventtimer [Minutes]\n\n"
+        descs = "Displays members and levels of desired Clan\nDisplays members and statuses of your clan\nDisplays LastGunners info - can only be executed in LastGunners' Discord Server\n"
+        descs+= "Displays supported commands\nCheck if there is an ongoing event\nSubscribes you to receive be mentioned any time there's an ongoing event\nUnsubscribe from event checks\n"
+        descs+= "A way to register your clan for use with /myclan\nUnregister your clan\nStart a timer - useful during events with time requirements"
         embed.add_field(name="Command", value=cmds)
         embed.add_field(name="Description", value=descs)
         embed.set_author(name="Xero Clan Helper", icon_url=bot.user.avatar.url)
@@ -423,6 +431,7 @@ def run_discord_bot():
                 else:
                     await interaction.response.send_message(f"Error processing your command: {data['text']}")
 
+    """
     @bot.tree.command(name="crashtest")
     async def crashtest(interaction: discord.Interaction):
         myid = 305035767170990081
@@ -436,6 +445,7 @@ def run_discord_bot():
     async def on_app_command_error(interaction: discord.Integration, error):
         myid = '<@305035767170990081>'
         await interaction.response.send_message(f"{myid}\n**Something went wrong**\n```{error}```")
+    """
 
     @bot.tree.command(name="eventcheckunsubscribe")
     async def eventcheckunsubscribe(interaction: discord.Interaction):
@@ -549,4 +559,18 @@ def run_discord_bot():
                 else:
                     await interaction.response.send_message(f"Something went wrong, please try again!")
 
+    @bot.tree.command(name="eventtimer")
+    @app_commands.describe(minutes = "Time needed for match to count")
+    async def eventtimer(interaction: discord.Interaction, minutes: int):
+
+        if minutes > 30:
+            await interaction.response.send_message(f"Duration can only be between 1 and 30 minutes!")
+        else:
+            user_id = interaction.user.id
+            await interaction.response.defer()
+            await asyncio.sleep(minutes * 60)
+            await interaction.followup.send(f"{minutes} minutes have passed. **You can now end the match!** <@{user_id}>")
+        #await interaction.response.send_message(f"**You can now end the match!**")
+
+    
     bot.run(TOKEN)

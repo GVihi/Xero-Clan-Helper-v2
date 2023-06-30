@@ -326,7 +326,7 @@ def run_discord_bot():
                     user_exists = True
 
             if user_exists:
-                await interaction.response.send_message("You have already registered your clan")
+                await interaction.response.send_message("You have already registered your clan", ephemeral=True)
             else:
                 r = requests.get("https://xero.gg/api/self/social/clan", headers={"x-api-access-key-id" : api_key, "x-api-secret-access-key": api_secret})
                 doc = BeautifulSoup(r.text, "html.parser")
@@ -362,11 +362,11 @@ def run_discord_bot():
                                 keys_added = True
 
                         if keys_added:
-                            await interaction.response.send_message("Clan registered successfully")
+                            await interaction.response.send_message("Clan registered successfully", ephemeral=True)
                         else:
-                            await interaction.response.send_message("Something went wrong, please try again")
+                            await interaction.response.send_message("Something went wrong, please try again", ephemeral=True)
                 else:
-                    await interaction.response.send_message(f"Failed to register your clan: {res['text']}")
+                    await interaction.response.send_message(f"Failed to register your clan: {res['text']}", ephemeral=True)
 
     @bot.tree.command(name="myclan")
     async def myclan(interaction: discord.Interaction):
